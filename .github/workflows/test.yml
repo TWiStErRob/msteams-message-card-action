@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 📣 Send teams notification
-        uses: simbo/msteams-message-card-action@main
+        uses: TWiStErRob/msteams-message-card-action@node20
         with:
           webhook: ${{ secrets.TEAMS_WEBHOOK }}
           message: Hello world!
@@ -22,9 +22,9 @@ jobs:
 
       - name: 📣 Send teams notification
         if: ${{ always() }}
-        uses: simbo/msteams-message-card-action@main
+        uses: TWiStErRob/msteams-message-card-action@node20
         env:
-          MY_AWESOME_BUTTON: Awesome http://this-is-so.awesome/
+          MY_AWESOME_BUTTON: Awesome https://this-is-so.awesome/
         with:
           webhook: ${{ secrets.TEAMS_WEBHOOK }}
           title: Hello world!
